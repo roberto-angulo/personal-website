@@ -1,0 +1,19 @@
+@import "../../styles/utilities.module";
+:root {
+  --metadataTitleMarginTop: 1.5rem;
+  --metadataTitleMarginBottom: 1rem;
+}
+.SkillsController {
+  @include setGrid;
+  .MetadataTitle {
+    margin: {
+      top: var(--metadataTitleMarginTop);
+      bottom: var(--metadataTitleMarginBottom);
+    }
+  }
+  .SkillsColumns {
+    grid-column: 2 / 12;
+    display: flex;
+    flex-direction: column;
+  }
+}

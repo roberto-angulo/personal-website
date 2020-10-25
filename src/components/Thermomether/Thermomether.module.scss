@@ -1,0 +1,46 @@
+@import "../../styles/colorConstants";
+@import "../../styles/utilities.module";
+@import "../../styles/globalConfig.module";
+
+.Thermomether {
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+  margin-top: 1rem;
+  .ContentWrapper {
+    --width: 90%;
+    --paddingLeft: 1rem;
+    --left: 7%;
+    @media (min-width: $breakLarge) {
+      --width: 35%;
+      --left: calc(var(--width) + 2%);
+    }
+    opacity: 0;
+    position: absolute;
+    margin-top: 2rem;
+    padding-left: var(--paddingLeft);
+    left: var(--left);
+    width: var(--width);
+    transition: all 300ms ease;
+    transform: rotateX(120deg);
+    top: 6.25rem;
+    &.Active {
+      opacity: 1;
+      top: 3rem;
+      transform: rotateX(0deg);
+    }
+    p {
+      line-height: 1.5rem;
+    }
+  }
+  .BulletItem {
+    border-radius: 50%;
+    color: $lightColor;
+    cursor: pointer;
+    margin-top: 1.2rem;
+    font-weight: 600;
+    height: 2rem;
+    width: 2rem;
+    @include alignJustify;
+  }
+}

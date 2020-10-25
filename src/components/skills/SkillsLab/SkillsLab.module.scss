@@ -1,0 +1,60 @@
+@import "../../../styles/utilities.module";
+@import "../../../styles/globalConfig.module";
+.SkillsLab {
+  $border: 5px solid $darkColor;
+  .Circle {
+    $circleSize: 7rem;
+    border-radius: $borderRadiusCircle;
+    border: $border;
+    height: $circleSize;
+    margin: 4rem auto 0 auto;
+    position: relative;
+    width: $circleSize;
+    &::before {
+      $borderRadius: 25%;
+      $width: 50%;
+      $height: calc(#{$width} * 0.5);
+      @include createPseudoElement($width, $height) {
+        $translateY: -95.5%;
+        $translateX: 47%;
+        background-color: $darkColor;
+        border-radius: $borderRadius;
+        box-sizing: border-box;
+        transform: translate($translateX, $translateY);
+      }
+    }
+  }
+  .Liquid {
+    $top: 46%;
+    $left: 3%;
+    background-color: blue;
+    border-radius: 0 0 20rem 20rem;
+    border: 1.5px solid $lightColor;
+    box-sizing: border-box;
+    display: flex;
+    height: 52%;
+    position: absolute;
+    left: $left;
+    overflow: hidden;
+    top: $top;
+    width: 94%;
+  }
+  .Bubble {
+    @mixin setBubble {
+      background-color: $lightColor;
+      border-radius: $borderRadiusCircle;
+    }
+    --sizeBubble: 1.39rem;
+    --sizeSmaller: calc(var(--sizeBubble) - 9%);
+    display: inline-block;
+    filter: contrast(90%);
+    height: var(--sizeBubble);
+    margin: 35% auto 0 auto;
+    width: var(--sizeBubble);
+    @include setBubble;
+    &:nth-child(odd) {
+      width: var(--sizeSmaller);
+      height: var(--sizeSmaller);
+    }
+  }
+}

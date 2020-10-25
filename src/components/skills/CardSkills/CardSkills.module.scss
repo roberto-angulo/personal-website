@@ -1,0 +1,40 @@
+@import "../../../styles/globalConfig.module";
+@import "../../../styles/utilities.module";
+.CardSkills {
+  // constants
+  --padding: 1rem;
+  --marginBottom: 1.1rem;
+  // rules
+  background: $lightColor;
+  border-radius: 8px;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.35);
+  display: flex;
+  margin-bottom: var(--marginBottom);
+  padding: var(--padding);
+  .TitleWrapper {
+    // constants
+    $borderRadius: 20px;
+    // rules
+    border-radius: $borderRadius;
+    @include setVisualAppearence($darkColor, $lightColor);
+    .Title {
+      text-align: center;
+    }
+  }
+  .ContentWrapper {
+    --paddingLeft: 1.8rem;
+    align-items: center;
+    display: flex;
+    padding-left: var(--paddingLeft);
+  }
+  .Icon {
+    --size: 4rem;
+    width: var(--size);
+    height: var(--size);
+    background: {
+      repeat: no-repeat;
+      size: contain;
+      position: center;
+    }
+  }
+}

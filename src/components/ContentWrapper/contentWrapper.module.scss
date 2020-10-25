@@ -1,0 +1,6 @@
+@import "../../styles/globalConfig.module";
+.ContentWrapper {
+  --height: 100vh;
+  height: var(--height);
+  color: $lightColor;
+}

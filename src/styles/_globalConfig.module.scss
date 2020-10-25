@@ -1,0 +1,54 @@
+@import "./utilities.module";
+@import "./colorConstants";
+:root {
+  --fontSizeH2: 2.25rem;
+  --bracketSize: 3rem;
+}
+
+// breakpoints variables
+$breakMedium: 47.94rem;
+$breakLarge: 61.94rem;
+$breakExtraLarge: 74.94rem;
+
+// fonts
+$headingFont: "Source Code Pro", monospace;
+$bodyFont: "Open Sans", sans-serif;
+
+$borderRadiusCircle: 50%;
+
+body {
+  & {
+    font-family: $bodyFont;
+  }
+  & {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: $headingFont;
+      margin: 0;
+    }
+  }
+  h2 {
+    $bracketsColor: rgba(0, 0, 0, 0.35);
+    $padding: 0.55rem;
+    font: {
+      size: var(--fontSizeH2);
+      weight: 700;
+    }
+    &::before {
+      content: "{";
+      color: $bracketsColor;
+      font-size: var(--bracketSize);
+      padding-right: $padding;
+    }
+    &::after {
+      content: "}";
+      color: $bracketsColor;
+      font-size: var(--bracketSize);
+      padding-left: $padding;
+    }
+  }
+}
